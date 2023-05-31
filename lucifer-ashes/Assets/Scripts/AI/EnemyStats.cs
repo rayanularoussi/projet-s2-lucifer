@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class EnemyStats : CharacterStats
 {
+    public GameObject supress;
+
     Rigidbody rb;
 
     public HealthBar healthBar;
 
     Animator animator;
+
+    public GameObject bossPack;
+    public bool bossOrNot = false;
+
+    public GameObject fogWallObject;
+    public AudioSource audioSource;
 
     private void Awake()
     {
@@ -20,7 +28,12 @@ public class EnemyStats : CharacterStats
     {
         maxHealth = SetMaxHealthFromHealthLevel();
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        if(healthBar != null)
+        {
+            healthBar.SetMaxHealth(maxHealth);
+        }
+        
+        
     }
 
     private int SetMaxHealthFromHealthLevel()
@@ -33,16 +46,44 @@ public class EnemyStats : CharacterStats
     {
         currentHealth = currentHealth - damage;
 
-        healthBar.SetCurrentHealth(currentHealth);
-
-        animator.Play("GetHit_01");
-
-        if(currentHealth <= 0)
+        if(healthBar != null)
         {
-            currentHealth = 0;
+            healthBar.SetCurrentHealth(currentHealth);
+        }
+        if(!bossOrNot)
+        {
+            animator.Play("GetHit_01");
+        }
+        
 
-            animator.Play("Death Monster");
-            rb.velocity = Vector3.zero;
+        if (currentHealth <= 0)
+        {   
+            currentHealth = 0;
+            if(bossOrNot)
+            {
+                Destroy(supress);
+                bossOrNot = false;
+            }
+            else
+            {
+                animator.Play("Death Monster");
+                if(audioSource != null)
+                {
+                    audioSource.Stop();
+                }
+            
+                if(bossPack != null)
+                {
+                    bossPack.SetActive(false);
+                }
+
+                if(fogWallObject != null)
+                {
+                    fogWallObject.SetActive(false);
+                }
+                rb.velocity = Vector3.zero;
+            }
+            
         }
     }
 }

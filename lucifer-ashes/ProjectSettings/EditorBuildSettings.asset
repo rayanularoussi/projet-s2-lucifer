@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: fcad17a4ef94740459d02ba85d4bdcfc
   - enabled: 1
-    path: Assets/Scenes/MultiGame.unity
-    guid: 8ac75c23723df32468e8871004220829
+    path: Assets/Scenes/MultiGam.unity
+    guid: f6877d5d8412e5d4e955cfcf9367062f
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab

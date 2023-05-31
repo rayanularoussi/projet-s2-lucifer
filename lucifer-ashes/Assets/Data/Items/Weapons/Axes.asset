@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5cf9abc2387c9f43b17a31517996b4a, type: 3}
+  m_Name: Axes
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 0}
+  itemName: Double Sided Axes
+  modelPrefab: {fileID: 4375309061733664960, guid: 54fc795319ec03643b0fcfbb0bfb1939, type: 3}
+  isUnarmed: 0
+  right_hand_idle: 
+  left_hand_idle: 
+  OH_Light_Attack_1: 
+  OH_Heavy_Attack_1: 
+  OH_Light_Attack_2: 
+  OH_Heavy_Attack_2: 
+  baseStamina: 0
+  lightAttackMultiplier: 0
+  heavyAttackMultiplier: 0
